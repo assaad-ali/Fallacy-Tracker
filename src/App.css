@@ -1,0 +1,28 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+
+:root {
+  --primary-color: #f9d835; /* Yellowish primary color */
+  --hover-color: #f9e07f; /* Lighter yellow for hover states */
+  --text-color: #333;
+  --background-color: #f8f8f8;
+  --border-color: #ddd;
+  --info-icon-color: #007bff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color:var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
