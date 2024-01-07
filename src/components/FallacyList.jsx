@@ -139,9 +139,7 @@ const FallacyList = () => {
                                     >
                                         i
                                     </button>
-                                    <span className="fallacy-name"
-                                        onClick={() => incrementCounter(category, fallacy.name)}
-                                    >
+                                    <span className="fallacy-name">
                                         {fallacy.name}
                                     </span>
 
@@ -149,10 +147,12 @@ const FallacyList = () => {
                                         <p className="fallacy-description">{fallacy.description}</p>
                                     )}
                                     <button className='decrease-btn' onClick={(e) => {
-                                        e.stopPropagation();
                                         decrementCounter(category, fallacy.name);
                                     }}>-</button>
                                     <span className="fallacy-counter"> {fallacy.count || ''}</span>
+                                    <button className='increase-btn' onClick={(e) => {
+                                        incrementCounter(category, fallacy.name);
+                                    }}>+</button>
                                 </li>
 
                             </div>
