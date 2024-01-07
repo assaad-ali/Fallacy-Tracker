@@ -107,6 +107,17 @@ const FallacyList = () => {
         }));
     };
 
+    const decrementCounter = (category, name) => {
+        setFallacyData(prevFallacies => ({
+            ...prevFallacies,
+            [category]: prevFallacies[category].map(fallacy =>
+                fallacy.name === name && fallacy.count > 0 ? {
+                    ...fallacy, count: fallacy.count - 1
+                } : fallacy
+            )
+        }));
+    };
+
     const handleDescriptionHover = (description) => {
         setActiveDescription(description);
     };
@@ -137,6 +148,10 @@ const FallacyList = () => {
                                     {activeDescription === fallacy.description && (
                                         <p className="fallacy-description">{fallacy.description}</p>
                                     )}
+                                    <button className='decrease-btn' onClick={(e) => {
+                                        e.stopPropagation();
+                                        decrementCounter(category, fallacy.name);
+                                    }}>-</button>
                                     <span className="fallacy-counter"> {fallacy.count || ''}</span>
                                 </li>
 
@@ -154,4 +169,4 @@ const FallacyList = () => {
     );
 };
 
-export default FallacyList;  
+export default FallacyList;
