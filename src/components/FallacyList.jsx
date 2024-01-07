@@ -146,13 +146,16 @@ const FallacyList = () => {
                                     {activeDescription === fallacy.description && (
                                         <p className="fallacy-description">{fallacy.description}</p>
                                     )}
-                                    <button className='decrease-btn' onClick={(e) => {
-                                        decrementCounter(category, fallacy.name);
-                                    }}>-</button>
-                                    <span className="fallacy-counter"> {fallacy.count || ''}</span>
-                                    <button className='increase-btn' onClick={(e) => {
-                                        incrementCounter(category, fallacy.name);
-                                    }}>+</button>
+
+                                    <div className="counter-controls">
+                                        <button className='decrease-btn' onClick={(e) => {
+                                            decrementCounter(category, fallacy.name);
+                                        }}>-</button>
+                                        <span className="fallacy-counter"> {fallacy.count || '0'}</span>
+                                        <button className='increase-btn' onClick={(e) => {
+                                            incrementCounter(category, fallacy.name);
+                                        }}>+</button>
+                                    </div>
                                 </li>
 
                             </div>
