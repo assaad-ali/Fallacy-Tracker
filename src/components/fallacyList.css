@@ -67,16 +67,6 @@ header{
 }
 
 
-.fallacy-name {
-    transition: background-color 0.7s ease-in-out;
-}
-
-.fallacy-name:hover {
-    border-radius: 0.5rem;
-    background-color: #ababab; /* Darker shade on hover */
-    padding: 0.5rem;
-    transform: scale(1.1);
-}
 
 .info-icon {
     cursor: pointer;
@@ -102,6 +92,41 @@ header{
     left: 50%;
     font-size: 60%;
     color: var(--background-color);
+}
+
+.decrease-btn,
+.increase-btn {
+    cursor: pointer;
+    margin: 0 5px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.decrease-btn:hover,
+.increase-btn:hover {
+    background-color: #e2e2e2;
+}
+
+.fallacy-counter {
+    width: 10%;
+    text-align: center;
+}
+
+.counter-controls {
+    display: flex;
+    align-items: center;
+}
+
+
+.decrease-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .dash-board{
@@ -162,9 +187,9 @@ header{
     }
     .fallacy-name{
         margin-left: 5%;
-        font-size: 0.9em;
+        font-size: 0.6em;
     }
     .info-icon, .fallacy-counter {
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
 }
